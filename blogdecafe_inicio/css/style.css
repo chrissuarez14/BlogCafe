@@ -1,0 +1,163 @@
+/*custom propierties*/
+:root{
+    --fuenteHeading: 'PT Sans',sans-serif;
+    --fuenteParrafos: 'Open Sans',sans-serif;
+    /*colores*/
+    --primario:#784d4c;
+    --blanco:#fff;
+    --negro:#000;
+}
+
+html{
+    box-sizing: border-box;/*para el border, padding etc. no afecte el ancho de elementos*/
+    font-size: 62.5%; /* para que 1rem se igual a 10px*/
+
+}
+*,*:before,*:after{
+    box-sizing: inherit; 
+}
+body{
+    font-family: var(--fuenteParrafos);
+    font-size: 1.6rem;
+    line-height: 2;/* en los blog es buena idea usar un interlneado para que se mas facil leer*/
+}
+
+/* Globales */
+
+.contenedor{
+    max-width: 120rem;
+    width:90%;
+    margin: 0 auto; /*centrar contenido*/
+
+}
+
+a{
+    text-decoration: none;
+}
+
+h1,h2,h3,h4{
+    font-family: var(--fuenteHeading);
+}
+
+h1{
+    font-size: 4.8rem;
+}
+
+h2{
+    font-size: 4rem;
+}
+h3{
+    font-size: 3.2rem;
+}
+h3{
+    font-size: 2.8rem;
+}
+img{
+    max-width: 100%;
+}
+
+/* Utilidades*/
+
+
+/*para elimnar margenes si se necesita*/
+.no-margin{
+     margin: 0;
+}
+
+ /*Eliminar padding*/
+
+
+.no-padding{
+     padding: 0;
+}
+
+
+/*centrar Texto*/
+
+.centrar-texto{
+    text-align: center;
+}
+
+
+/* Header*/
+
+.header{
+    background-image: url(../img/banner.jpg);
+    height: 60rem; /*para que aparezca la imagen*/
+    background-size: cover; /*cover es para que tome todo el espacio disponible y no se repita la imagen*/
+    background-repeat: no-repeat; /*para que no repita*/
+    background-position: center center; /*para que cuando hagamos chica la imagen se haga chica*/
+}
+.header__texto{
+    text-align: center;
+    color: var(--blanco);
+    margin-top: 5rem;
+}
+@media(min-width: 768px) {
+    .header__texto{
+        margin-top:15rem;
+    }
+}
+
+
+@media(min-width: 768px) {
+    .barra{
+        display:flex;
+        justify-content: space-between; /*mover cada una a la orilla*/
+        align-items: center;
+    }
+   
+}
+.logo{
+    color: var(--blanco);
+}
+.logo__nombre{
+    color: var(--blanco);
+    font-weight: normal; /*para que se vea la letra delgada o 400 e lo mismo*/
+}
+.logo__bold{
+    color:var(--blanco);
+    font-weight: 700;
+    
+}
+@media(min-width: 768px) {
+    .navegacion{
+        display: flex; /*acomodarlos de derecha a izquierda */
+        gap: 2rem; /*separadcion entre elemetnos*/
+    }
+}
+
+.navegacion__enlace{
+    display:block; /*hacerlo en vertical*/
+    text-align: center;
+    color: var(--blanco);
+    font-size: 1.8rem;
+}
+
+@media(min-width: 768px) {
+    .contenido-principal{
+        display:grid;
+        grid-template-columns:  2fr 1fr;
+        column-gap: 4rem ;
+        
+    }
+    
+}
+.entrada__imagen{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.boton{
+    background-color: var(--negro);
+   
+    color: var(--blanco);
+    text-align: center; 
+    margin-bottom: 0;
+    text-transform: uppercase;
+    border-radius: 0.4rem;
+    margin: 4rem 0 ;
+    padding: 2rem;
+}
+
+
