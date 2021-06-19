@@ -238,3 +238,37 @@ img{
 
 
 /** Paginas Nosotros**/
+/** Con Grid**/
+/*@media(min-width: 768px) {
+    .sobre-nosotros{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 2rem;
+    } 
+    
+}*/
+
+/** Con Flex**/
+
+@media(min-width: 768px) {
+    .sobre-nosotros{
+     display: flex;
+     gap: 2rem;
+     justify-content: space-between; /*este es el compadre de flex basis para separar contenido entremedio*/
+    } 
+    .sobre-nosotros__imagen{
+        /*con esto no tendra facto de crecimiento ni factor minimo, pero tomara la base de calc y ese es el tercer valor y esto es lo mismo que suar flex-baasis*/
+        flex: 0 0  calc(50% - 1rem);  /* primer valor factor de crecimineto, cuantas veces va a crecer este elemento En este caso en ambos es de 50 50. 2-*/
+
+    }
+    .sobre-nosotros__texto{
+        flex: 0 0  calc(50% - 1rem);
+    }
+
+
+    /*.sobre-nosotros__imagen,*/
+   /* .sobre-nosotros__texto{*/
+     /*  flex-basis: calc(50% - 1rem);*/ /*para separar contenido con el gap aun no existe mucho soporte y este si. Aun que esta es la version larga */
+    /*}*/
+
+}
