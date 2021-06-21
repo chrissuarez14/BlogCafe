@@ -5,17 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BlogCafe</title>
-    <link href="css/normalize.css" rel="stylesheet">
+    <meta name="description" content="Pagina web del blog de cafe"> 
+
+
+    <!--Prefecth-->
+    <link rel="prefecth" href="nosotros.html" as="document">
+
+
+
+
+
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
+
+
+    <!--Preload-->
+
+    <link rel="preload" href="css/normalize.css" as="style">
+    <link rel="stylesheet" href="css/normalize.css"> <!--Cargarla-->
+
+
+
+    <!--Haciendo preload a la hoja de estilos  -->
+
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <!--Preload a las fuentes(libreria externa)-->
+    <link rel="preload"  href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" as="font" crossorigin="crossorigin">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css"  type="text/css">
-        
+
+
+    <!--Cargamos una imagen-->
+    <link rel="preload" href="img/blog1.jpg" as="image">
+
+
 </head>
 <body>
     <header class="header">
 
         <div class="contenedor ">
-            <div class="barra ">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <a class="logo " href="index.html">
+            <div class="barra "> 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <a class="logo " href="index.html">
                     <h1 class="logo__nombre no-margin centrar-texto">Blog<span class="logo__bold">DeCafe</span></h1>
                 </a>
             
@@ -39,7 +71,12 @@
             <h3>Nuestro Blog</h3>
             <article class="entrada">
                 <div class="entrada_imagen">
-                    <img src="img/blog1.jpg" alt="">
+                    <!--El orden depende a cual le quieras dar preferencia al cual primero intento usar-->
+                    <picture>
+                        <source loading="lazy srcset="img/blog3.webp" type="image"> 
+                        <img  loading="lazy"  src="img/blog1.jpg" alt="">
+                    </picture>
+                    
                     <div class="entrada__contenido">
                         <h4 class="no-margin">Tipos de granos de cafe</h4>
                         <p>orem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum erat at ipsum pharetra, vitae pretium nunc dignissim. Nulla viverra nisi in turpis dictum, eget mollis leo bibendum. Aliquam posuere sapien a augue cursus, et luctus risus tincidunt. P
@@ -51,8 +88,12 @@
             </article>
 
             <article class="entrada">
-                <div class="entrada_imagen">
-                    <img src="img/blog2.jpg" alt="">
+                <div  class="entrada_imagen">
+                    <picture>
+                        <source loading="lazy srcset="img/blog2.webp" type="image"> 
+                        <img  loading="lazy"  src="img/blog2.jpg" alt="">
+                    </picture>
+                    
                     <div class="entrada__contenido">
                         <h4 class="no-margin">3 Deliciosas  recetas de cafe</h4>
                         <p>orem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum erat at ipsum pharetra, vitae pretium nunc dignissim. Nulla viverra nisi in turpis dictum, eget mollis leo bibendum. Aliquam posuere sapien a augue cursus, et luctus risus tincidunt. P
@@ -65,7 +106,11 @@
 
             <article class="entrada">
                 <div class="entrada_imagen">
-                    <img src="img/blog3.jpg" alt="">
+                    <picture>
+                        <source  loading="lazy" srcset="img/blog3.webp" type="image"> 
+                        <img  loading="lazy"  src="img/blog3.jpg" alt="">
+                    </picture>
+                 
                     <div class="entrada__contenido">
                         <h4 class="no-margin">Beneficios del cafe</h4>
                         <p>orem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum erat at ipsum pharetra, vitae pretium nunc dignissim. Nulla viverra nisi in turpis dictum, eget mollis leo bibendum. Aliquam posuere sapien a augue cursus, et luctus risus tincidunt. P
@@ -125,6 +170,6 @@
        
         
     </footer>
-    
+    <script src="js/modernizr.js"></script>
 </body>
 </html>
